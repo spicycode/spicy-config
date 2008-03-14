@@ -1,0 +1,8 @@
+require 'autotest/redgreen'
+require 'autotest/timestamp'
+
+Autotest.add_hook :initialize do |autotest|
+  autotest.add_exception(/^\.\/vendor/)
+  autotest.add_exception(/\.svn/)
+  autotest.add_exception(/\.git/)
+end

@@ -1,0 +1,26 @@
+set mainfont {Monaco 14}
+set textfont {Monaco 14}
+set uifont {"Monaco Bold" 14}
+set tabstop 8
+set findmergefiles 0
+set maxgraphpct 50
+set maxwidth 16
+set cmitmode patch
+set wrapcomment none
+set showneartags 1
+set showlocalchanges 1
+set datetimeformat {%Y-%m-%d %H:%M:%S}
+set bgcolor white
+set fgcolor black
+set colors {green red blue magenta darkgrey brown orange}
+set diffcolors {red "#00a000" blue}
+set diffcontext 3
+set selectbgcolor gray85
+set geometry(main) 1407x786+0+21
+set geometry(topwidth) 1403
+set geometry(topheight) 241
+set geometry(pwsash0) "665 2"
+set geometry(pwsash1) "1042 2"
+set geometry(botwidth) 862
+set geometry(botheight) 525
+set permviews {}

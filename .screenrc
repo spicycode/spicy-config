@@ -1,0 +1,33 @@
+
+# Change default scrollback value for new windows
+defscrollback 1000                           # default: 100
+
+# Define the time that all windows monitored for silence should 
+# wait before displaying a message. Default 30 seconds.
+silencewait 15                               # default: 30
+
+# Disable visual bell
+# vbell off
+
+# Reset escape sequence to backtick 
+escape ``                                    # default: ESC
+
+# Automatically detach on hangup. 
+autodetach on                                # default: on
+
+# Don't display the copyright page
+startup_message off                          # default: on
+
+# Affects the copying of text regions
+crlf off                                     # default: off
+
+# Enable UTF8 compatibility
+defutf8 on
+
+# Crazy Subtle Status Line
+hardstatus alwayslastline "%{wk}%-w%{Gk}[%n %t]%{wk}%+w%=%{Ck}%D %M"
+
+screen -t 'script/server' script/server
+screen -t vim vim .
+screen -t autotest autotest
+select 1
