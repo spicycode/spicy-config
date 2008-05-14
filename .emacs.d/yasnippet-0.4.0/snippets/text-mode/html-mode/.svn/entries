@@ -1,0 +1,88 @@
+8
+
+dir
+283
+https://opensource.thinkrelevance.com/svn/incubator/.elisp/packages/yasnippet-0.4.0/snippets/text-mode/html-mode
+https://opensource.thinkrelevance.com/svn
+
+
+
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+
+svn:special svn:externals svn:needs-lock
+
+doctype.xhml1
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+463118f48a0a4508be2d2c267f316490
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+div
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+0ddd808cd78d505f09b7b398c4a43623
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+doctype.xhtml1_1
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+3222e64c108129d033d243f67f42ba51
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+doctype
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+bca591e1b573c71324930e868633da5f
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+doctype.xhtml1_transitional
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+12de1432f525161a13e2cb032b8b5888
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+doctype.xhtml1_strict
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+fa8bdca61918c9f10ed50f9890db26e5
+2008-03-21T04:01:01.713674Z
+283
+abedra
+

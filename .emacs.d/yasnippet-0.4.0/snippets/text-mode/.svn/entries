@@ -1,0 +1,64 @@
+8
+
+dir
+283
+https://opensource.thinkrelevance.com/svn/incubator/.elisp/packages/yasnippet-0.4.0/snippets/text-mode
+https://opensource.thinkrelevance.com/svn
+
+
+
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+
+svn:special svn:externals svn:needs-lock
+
+objc-mode
+dir
+
+python-mode
+dir
+
+ruby-mode
+dir
+
+perl-mode
+dir
+
+html-mode
+dir
+
+cc-mode
+dir
+
+email
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+fa9ae2839be3e6d9b17a93f74da07504
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
+css-mode
+dir
+
+rst-mode
+dir
+
+time
+file
+
+
+
+
+2008-03-20T23:48:43.000000Z
+f0b9d06664e171627d8c87ea7a26b7c6
+2008-03-21T04:01:01.713674Z
+283
+abedra
+
