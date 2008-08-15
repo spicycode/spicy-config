@@ -42,5 +42,13 @@ postexec() {
   set_running_app
 }
 
+#case $VIM in
+#/Applications/MacVim.app/Contents/Resources/vim)
+#  export PS1=''
+#  export CLICOLOR=0
+#  export TERM=xterm
+#  ;;
+#*)
 export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color$bold_color$fg[green]%}%{$reset_color$fg[green]%}$(parse_git_branch)>%{$reset_color%} ' 
-
+#  ;;
+#esac

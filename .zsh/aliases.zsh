@@ -53,3 +53,9 @@ alias tf='tail -f -n 100'
 alias t500='tail -n 500'
 alias t1000='tail -n 1000'
 alias t2000='tail -n 2000'
+
+
+function mysqlredo {
+  mysqladmin drop $1
+  mysqladmin create $1
+}
