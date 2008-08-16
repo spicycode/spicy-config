@@ -26,7 +26,6 @@ zstyle ':completion:*:scp:*' tag-order files 'hosts:-domain:domain'
 zstyle ':completion:*:scp:*' group-order files all-files users hosts-domain hosts-host hosts-ipaddr
 zstyle ':completion:*:ssh:*' tag-order 'hosts:-domain:domain'
 zstyle ':completion:*:ssh:*' group-order hosts-domain hosts-host users hosts-ipaddr
-zstyle '*' single-ignored show
  
 ### highlight parameters with uncommon names
 zstyle ':completion:*:parameters' list-colors "=[^a-zA-Z]*=$color[red]"
