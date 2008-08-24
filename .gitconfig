@@ -28,3 +28,8 @@
 	ci = commit
 	co = checkout
 	st = status
+  ch = cherry -v origin
+[github]
+	user = spicycode
+[diff "ruby"]
+	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)

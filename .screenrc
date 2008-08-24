@@ -27,7 +27,5 @@ defutf8 on
 # Crazy Subtle Status Line
 hardstatus alwayslastline "%{wk}%-w%{Gk}[%n %t]%{wk}%+w%=%{Ck}%D %M"
 
-screen -t 'script/server' script/server
-screen -t vim vim .
-screen -t autotest autotest
-select 1
+screen
+screen

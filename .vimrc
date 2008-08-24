@@ -7,7 +7,11 @@
   set directory=/tmp/
 
 " Color themes
+"  colors spicycode
   colors wombat
+
+" Set grep to ack
+  set grepprg=ack\ -a
 
 " These two enable syntax highlighting
   set nocompatible
@@ -24,7 +28,7 @@
 
   set completeopt=menu,preview
   
-" Use the cool tab complete menu
+" Use the tab complete menu
   set wildmenu 
   set wildmode=list:longest,full
 
@@ -57,14 +61,7 @@
 
 " enable line numbers
   set number
-
-" If possible, try to use a narrow line number column.
-  if v:version >= 700
-      try
-        setlocal numberwidth=3
-      catch
-      endtry
-  endif
+  setlocal numberwidth=3
 
 " FILE BROWSING
 " Settings for explorer.vim
@@ -72,7 +69,6 @@
 
 " Settings fo rnetrw
   let g:netrw_list_hide='^\.,\~$'
-
 
 " TAB COMPLETION FOR AUTO COMPLETE
   if has("eval")
@@ -102,23 +98,16 @@
   :nmap ,v :tabe ~/.vimrc<cr>
   
 " TAB NAVIGATION
-  :nmap } :tabnext<cr>
   :nmap ,tn :tabnext<cr>
-  :nmap { :tabprevious<cr>  
   :nmap ,tp :tabprevious<cr>  
   :nmap ,te :tabedit  
 
-" RSPEC
-  :nmap ,sh :! script/spec spec/helpers<cr>
-  :nmap ,sm :! script/spec spec/models<cr>
-  :nmap ,sv :! script/spec spec/views<cr>
-  :nmap ,sc :! script/spec spec/controllers<cr>
-  :nmap ,sf :! script/spec %<cr>
-  :nmap ,c  :! rake cruise<cr>  
+" Run file with 
+  :nmap ,sf :! script/spec -fn %<cr>
+  :nmap ,st :! ruby %<cr>
 
-" nick's mappings
-" typing ii while in insert mode will escape to normal mode
-  imap ii <Esc>
+  " Quick, jump out of insert mode while no one is looking
+  :imap ii <Esc>
 
   ""Nice statusbar
   set laststatus=2
@@ -137,5 +126,7 @@
 
   " titlestring: what will actually be displayed
   set   titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
+
   " Turn off rails bits of statusbar
   let g:rails_statusline=0
+

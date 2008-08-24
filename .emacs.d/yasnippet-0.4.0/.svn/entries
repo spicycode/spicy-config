@@ -1,34 +1,0 @@
-8
-
-dir
-283
-https://opensource.thinkrelevance.com/svn/incubator/.elisp/packages/yasnippet-0.4.0
-https://opensource.thinkrelevance.com/svn
-
-
-
-2008-03-21T04:01:01.713674Z
-283
-abedra
-
-
-svn:special svn:externals svn:needs-lock
-
-doc
-dir
-
-snippets
-dir
-
-yasnippet.el
-file
-
-
-
-
-2008-03-20T23:48:43.000000Z
-61569bb3abb4a9a1dae2a3cf4ddfeee9
-2008-03-21T04:01:01.713674Z
-283
-abedra
-

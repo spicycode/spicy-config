@@ -1,3 +1,0 @@
-it "${1:test}" do
-   $0
-end
