@@ -1,0 +1,18 @@
+h1. Spicy Config
+
+h3. Long ago, in a $HOME directory mounted several servers away
+
+So this is my pile *o* config files.   In it you will find:
+
+* ZSH shell config (shell of choice)
+* Bash shell config (mirrors my ZSH as much as possible)
+* Fish shell config
+* IRB config
+* VIM config
+* Emacs config
+* Screen config
+* Git config
+
+h3. Will the config ever stop?
+
+Yo, I don't know.
