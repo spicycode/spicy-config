@@ -1,7 +1,6 @@
 " Vim filetype plugin
 " Language:		Ruby
 " Maintainer:		Gavin Sinclair <gsinclair at gmail.com>
-" Info:			$Id: ruby.vim,v 1.39 2007/05/06 16:38:40 tpope Exp $
 " URL:			http://vim-ruby.rubyforge.org
 " Anon CVS:		See above site
 " Release Coordinator:  Doug Kearns <dougkearns@gmail.com>
@@ -227,4 +226,4 @@ endfunction
 " differs on Windows.  Email gsinclair@soyabean.com.au if you need help.
 "
 
-" vim: nowrap sw=2 sts=2 ts=8 ff=unix:
+" vim: nowrap sw=2 sts=2 ts=8:
