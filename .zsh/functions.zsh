@@ -3,7 +3,7 @@ function update_textmate_bundles {
     cd $dir
     git pull
     svn up
-    cd ~
+    cd -
   done
 }
 
