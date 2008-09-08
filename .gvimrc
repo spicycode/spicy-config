@@ -1,2 +1,2 @@
-  colors github
+  colors spicycode
   set guioptions-=T 

@@ -7,8 +7,8 @@
   set directory=/tmp/
 
 " Color themes
-  colors spicycode
-"  colors wombat
+"  colors spicycode
+  colors wombat
 
 " Set grep to ack
   set grepprg=ack\ -a
