@@ -30,12 +30,11 @@ if has("gui_running")
     highlight Search guibg=White
     highlight Pmenu guibg=darkgrey gui=bold guifg=white 
     highlight PmenuSel guibg=green gui=bold guifg=white 
-
+    highlight Visual guifg=NONE guibg=#343434
     " display the status line of the active window in a distinctive color: 
-    hi StatusLine gui=NONE,bold guibg=darkgrey guifg=white 
-    hi WildMenu gui=NONE,bold guibg=green guifg=white 
-    hi StatusLineNC gui=NONE guibg=black guifg=lightgrey 
-    
+    highlight StatusLine gui=NONE,bold guibg=#1A1A1A guifg=white 
+    highlight StatusLineNC gui=NONE guibg=#1A1A1A guifg=#808080
+    highlight WildMenu gui=NONE,bold guibg=green guifg=white 
 else
     set t_Co=256
     highlight Normal ctermfg=White ctermbg=Black  

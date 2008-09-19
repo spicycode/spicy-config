@@ -19,6 +19,7 @@ alias gvim='mvim -p'
 alias r='/usr/bin/r'
 alias autou='autotest'
 alias autof='AUTOTEST=functional autotest'
+alias cycle_passenger='touch tmp/restart.txt'
 
 # Rob's aliases
 alias g='git'
