@@ -7,8 +7,8 @@
   set directory=/tmp/
 
 " Color themes
-"  colors spicycode
-  colors wombat
+  colors spicycode
+"  colors wombat
 
 " Set grep to ack
   set grepprg=ack\ -a
@@ -127,6 +127,30 @@
   " titlestring: what will actually be displayed
   set   titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
 
+  " Reset the mapleader to comma
+  let mapleader = ","
+ 
   " Turn off rails bits of statusbar
   let g:rails_statusline=0
+ 
+  " TagList {{{
+  let Tlist_GainFocus_On_ToggleOpen = 1
+  let Tlist_Inc_Winwidth = 0
+  let Tlist_Show_One_File = 1
+  let Tlist_Enable_Fold_Column = 0
+  " }}} TagList
+
+  " NERDTree {{{
+  let NERDChristmasTree = 1
+  let NERDTreeHighlightCursorline = 1
+  let NERDTreeShowBookmarks = 1
+  let NERDTreeShowHidden = 1
+  let NERDTreeQuitOnOpen = 1
+  " }}} NERDTree
+
+ " NERDTree
+  :nmap <F2> :NERDTreeToggle<cr>
+ 
+  " taglist
+  :nmap <F3> :TlistToggle<cr>
 

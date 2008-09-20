@@ -32,9 +32,9 @@ if has("gui_running")
     highlight PmenuSel guibg=green gui=bold guifg=white 
 
     " display the status line of the active window in a distinctive color: 
-    hi StatusLine gui=NONE,bold guibg=darkgrey guifg=white 
+    hi StatusLine gui=NONE,bold guibg=#1A1A1A guifg=white 
+    hi StatusLineNC gui=NONE guibg=#1A1A1A guifg=#808080
     hi WildMenu gui=NONE,bold guibg=green guifg=white 
-    hi StatusLineNC gui=NONE guibg=black guifg=lightgrey 
     
 else
     set t_Co=256
