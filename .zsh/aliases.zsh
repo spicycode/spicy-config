@@ -19,41 +19,7 @@ alias gvim='mvim -p'
 alias r='/usr/bin/r'
 alias autou='autotest'
 alias autof='AUTOTEST=functional autotest'
-
-# Rob's aliases
-alias g='git'
-alias gst='git status'
-alias gl='git pull'
-alias gp='git push'
-alias gd='git diff | mate'
-alias gc='git commit -v'
-alias gca='git commit -v -a'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gcap='git commit -v -a && git push'
-alias gpp='git pull; git push'
-alias c='cd '
-alias mv='mv -i'
-alias rm='rm -i'
-alias :='cd ..'
-alias ::='cd ../..'
-alias :::='cd ../../..'
-alias md=mkdir
-alias m='mate'
-
-# listing files
-alias l='ls -al'
-alias lt='ll -t'
-alias la='lt -a'
-alias ltr='ls -ltr'
-alias lth='ll -t|head'
-alias ltr='ls -ltr'
-alias lh='ls -Shl | less'
-alias tf='tail -f -n 100'
-alias t500='tail -n 500'
-alias t1000='tail -n 1000'
-alias t2000='tail -n 2000'
-
+alias cycle_passenger='touch tmp/restart.txt'
 
 function mysqlredo {
   mysqladmin drop $1

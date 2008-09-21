@@ -106,10 +106,10 @@
   :nmap ,sf :! script/spec -fn %<cr>
   :nmap ,st :! ruby %<cr>
 
-  " Quick, jump out of insert mode while no one is looking
+" Quick, jump out of insert mode while no one is looking
   :imap ii <Esc>
 
-  ""Nice statusbar
+" Nice statusbar
   set laststatus=2
   set statusline=\ "
   set statusline+=%f\ " file name
@@ -121,36 +121,32 @@
   set statusline+=%= " right align
   set statusline+=%-14.(%l,%c%V%)\ %<%P " offset
 
-  " title: update the title of the window?
-  set   title
+" Title: update the title of the window?
+  set title
 
-  " titlestring: what will actually be displayed
-  set   titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
-
-  " Reset the mapleader to comma
-  let mapleader = ","
+" Title String: what will actually be displayed
+  set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
  
-  " Turn off rails bits of statusbar
+" Turn off rails bits of statusbar
   let g:rails_statusline=0
  
-  " TagList {{{
+" TagList {{{
+  set tags=./tags;
   let Tlist_GainFocus_On_ToggleOpen = 1
   let Tlist_Inc_Winwidth = 0
-  let Tlist_Show_One_File = 1
   let Tlist_Enable_Fold_Column = 0
-  " }}} TagList
+  let Tlist_Use_SingleClick = 1
+  let Tlist_Use_Right_Window = 1
+  :nmap ,ta :TlistAddFilesRecursive app<cr>
+  :nmap <F3> :TlistToggle<cr>
 
-  " NERDTree {{{
+" NERDTree {{{
   let NERDChristmasTree = 1
   let NERDTreeHighlightCursorline = 1
   let NERDTreeShowBookmarks = 1
   let NERDTreeShowHidden = 1
   let NERDTreeQuitOnOpen = 1
-  " }}} NERDTree
 
- " NERDTree
   :nmap <F2> :NERDTreeToggle<cr>
- 
-  " taglist
-  :nmap <F3> :TlistToggle<cr>
+
 

@@ -11,5 +11,5 @@ Autotest.add_hook :run do |autotest|
   autotest.add_exception(/^\.\/public/)
   autotest.add_exception(/^\.\/tmp/)
   autotest.add_exception(/^\.\/vendor/)
+  autotest.unit_diff = 'cat' # Disable unit_diff, just pipe the stuff through cat
 end
-
