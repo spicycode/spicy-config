@@ -20,6 +20,7 @@ alias r='/usr/bin/r'
 alias autou='autotest'
 alias autof='AUTOTEST=functional autotest'
 alias cycle_passenger='touch tmp/restart.txt'
+alias e='open -a Emacs'
 
 function mysqlredo {
   mysqladmin drop $1

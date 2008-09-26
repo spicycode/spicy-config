@@ -103,8 +103,8 @@
   :nmap ,te :tabedit  
 
 " Run file with 
-  :nmap ,sf :! script/spec -fn %<cr>
-  :nmap ,st :! ruby %<cr>
+  :nmap ,sf :! clear; script/spec -fn %<cr>
+  :nmap ,st :! clear; ruby %<cr>
 
 " Quick, jump out of insert mode while no one is looking
   :imap ii <Esc>

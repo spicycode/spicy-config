@@ -56,6 +56,11 @@ else
     highlight Search ctermbg=White 
     highlight Pmenu ctermbg=darkgrey cterm=bold ctermfg=white 
     highlight PmenuSel ctermbg=green cterm=bold ctermfg=white 
+    highlight Visual ctermfg=NONE ctermbg=darkgrey
+    " display the status line of the active window in a distinctive color: 
+    highlight StatusLine cterm=NONE,bold ctermbg=grey ctermfg=white 
+    highlight StatusLineNC cterm=NONE ctermbg=white ctermfg=black
+    highlight WildMenu cterm=NONE,bold ctermbg=green ctermfg=white 
 
     " display the status line of the active window in a distinctive color: 
     hi StatusLine cterm=NONE,bold ctermbg=darkgrey ctermfg=white 

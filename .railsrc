@@ -5,3 +5,7 @@ end
 def sql(query)
   ActiveRecord::Base.connection.select_all(query)
 end
+
+def log_to_stdout
+  ActiveRecord::Base.logger = Logger.new(STDOUT)
+end
