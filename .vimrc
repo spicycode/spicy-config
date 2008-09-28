@@ -1,14 +1,7 @@
   scriptencoding utf-8
 
-" MAKE ARROW KEYS WORK IN CONSOLE VI
-  set term=xterm
-  
 " Set temporary directory (don't litter local dir with swp/tmp files)
   set directory=/tmp/
-
-" Color themes
-  colors spicycode
-"  colors wombat
 
 " Set grep to ack
   set grepprg=ack\ -a
@@ -102,9 +95,27 @@
   :nmap ,tp :tabprevious<cr>  
   :nmap ,te :tabedit  
 
+" SHELL
+  command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
+
+  function! s:RunShellCommand(cmdline)
+    botright new
+    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
+    call setline(1,a:cmdline)
+    call setline(2,substitute(a:cmdline,'.','=','g'))
+    execute 'silent $read !'.escape(a:cmdline,'%#')
+    setlocal nomodifiable
+    1
+  endfunction
+
+  :nmap ,sh :Shell 
+
+" find file in project
+  :nmap ,t :find 
+
 " Run file with 
-  :nmap ,sf :! clear; script/spec -fn %<cr>
-  :nmap ,st :! clear; ruby %<cr>
+  :nmap ,sf :Shell script/spec -cfp %<cr>
+  :nmap ,st :Shell ruby %<cr>
 
 " Quick, jump out of insert mode while no one is looking
   :imap ii <Esc>
@@ -149,4 +160,16 @@
 
   :nmap <F2> :NERDTreeToggle<cr>
 
+  autocmd FileType irb inoremap <buffer> <silent> <Cr> <Esc>:<C-u>ruby v=VIM::Buffer.current;v.append(v.line_number, eval(v[v.line_number]).inspect)<Cr>jo
+  nnoremap ,irb :<C-u>below new<Cr>:setfiletype irb<Cr>:set syntax=ruby<Cr>i
+
+  if has("gui_running")
+    colors spicycodegui
+    set guioptions=e
+    set guioptions-=m
+  else
+  " MAKE ARROW KEYS WORK IN CONSOLE VI
+   set term=xterm
+   colors spicycode
+  endif
 

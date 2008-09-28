@@ -1,6 +1,6 @@
-require 'autotest/redgreen'
+require 'autotest/growl'
 
-Autotest.add_hook :run do |autotest|
+Autotest.add_hook :initialize do |autotest|
   autotest.add_exception(/\.git/)
   autotest.add_exception(/\.hg/)
   autotest.add_exception(/\.svn/)
