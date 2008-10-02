@@ -172,4 +172,3 @@
    set term=xterm
    colors spicycode
   endif
-
