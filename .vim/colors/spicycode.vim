@@ -31,11 +31,12 @@ highlight String ctermfg=82
 highlight Search ctermbg=White 
 highlight Pmenu ctermbg=darkgrey cterm=bold ctermfg=white 
 highlight PmenuSel ctermbg=green cterm=bold ctermfg=white 
-highlight Visual ctermfg=NONE ctermbg=darkgrey
+highlight Visual ctermfg=lightgrey ctermbg=black
 highlight StatusLine cterm=NONE,bold ctermbg=darkgray ctermfg=lightgray 
 highlight StatusLineNC ctermbg=black ctermfg=darkgray 
 highlight WildMenu ctermbg=black ctermfg=white 
 
+highlight completedInTime ctermfg=red ctermbg=lightgray
 
 " make the active status line colours alternate between two settings to give a visual notice of the CursorHold/CursorHoldI events 
 if ! exists("s:statuslineflag") 

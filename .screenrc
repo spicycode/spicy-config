@@ -1,3 +1,9 @@
+# terminfo and termcap for nice 256 color terminal allow bold colors - necessary for some reason
+attrcolor b ".I" 
+# tell screen how to set colors. AB = background, AF=foreground 
+termcapinfo xterm 'Co#256:AB=\E[48;5;%dm:AF=\E[38;5;%dm' 
+# erase background with current bg color 
+defbce "on" 
 
 # Change default scrollback value for new windows
 defscrollback 1000                           # default: 100
@@ -5,9 +11,6 @@ defscrollback 1000                           # default: 100
 # Define the time that all windows monitored for silence should 
 # wait before displaying a message. Default 30 seconds.
 silencewait 15                               # default: 30
-
-# Disable visual bell
-# vbell off
 
 # Reset escape sequence to backtick 
 escape ``                                    # default: ESC
@@ -25,7 +28,12 @@ crlf off                                     # default: off
 defutf8 on
 
 # Crazy Subtle Status Line
-hardstatus alwayslastline "%{wk}%-w%{Gk}[%n %t]%{wk}%+w%=%{Ck}%D %M"
+# Pretty status bar at the bottom.
+caption always " %m%d %c |  %w"
 
-screen
+bind s split
+bind o focus
+bind x remove
+bind m monitor
+
 screen

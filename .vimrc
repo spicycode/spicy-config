@@ -4,7 +4,7 @@
   set directory=/tmp/
 
 " Set grep to ack
-  set grepprg=ack\ -a
+  set grepprg=ack\ --noenv\ -a
 
 " These two enable syntax highlighting
   set nocompatible
@@ -103,6 +103,8 @@
     setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
     call setline(1,a:cmdline)
     call setline(2,substitute(a:cmdline,'.','=','g'))
+    execute 'setfiletype shell'
+"    execute 'set syntax=shell'
     execute 'silent $read !'.escape(a:cmdline,'%#')
     setlocal nomodifiable
     1
