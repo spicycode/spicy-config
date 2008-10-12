@@ -49,3 +49,10 @@
   highlight TabLineSel gui=NONE guibg=#343434 guifg=white 
   highlight TabLineFill gui=NONE guibg=#1A1A1A
 
+  highlight ShellTestResultsTime guifg=white
+  highlight ShellTestSpecName gui=NONE,bold
+  highlight ShellTestFailure guifg=red
+  highlight ShellTestSuccess guifg=green
+  highlight ShellExpectation gui=bold guibg=black guifg=lightblue
+  highlight ShellTextExpectationDivider guifg=lightblue 
+  highlight ShellTextSpecFileInfo guifg=black guibg=white

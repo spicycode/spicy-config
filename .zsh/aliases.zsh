@@ -22,6 +22,7 @@ alias autof='AUTOTEST=functional autotest'
 alias cycle_passenger='touch tmp/restart.txt'
 alias e='open -a Emacs'
 alias screen='/opt/local/bin/screen'
+alias gemdir='/Library/Ruby/Gems/1.8/gems/'
 
 function mysqlredo {
   mysqladmin drop $1

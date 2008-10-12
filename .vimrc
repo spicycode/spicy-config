@@ -104,7 +104,7 @@
     call setline(1,a:cmdline)
     call setline(2,substitute(a:cmdline,'.','=','g'))
     execute 'setfiletype shell'
-"    execute 'set syntax=shell'
+    execute 'set syntax=shell'
     execute 'silent $read !'.escape(a:cmdline,'%#')
     setlocal nomodifiable
     1
@@ -118,7 +118,8 @@
 " Run file with 
   :nmap ,sf :Shell script/spec -cfp %<cr>
   :nmap ,st :Shell ruby %<cr>
-
+  
+  :nmap ,foo  :source ~/.vimrc<cr>:set syntax=shell<cr>
 " Quick, jump out of insert mode while no one is looking
   :imap ii <Esc>
 

@@ -36,7 +36,15 @@ highlight StatusLine cterm=NONE,bold ctermbg=darkgray ctermfg=lightgray
 highlight StatusLineNC ctermbg=black ctermfg=darkgray 
 highlight WildMenu ctermbg=black ctermfg=white 
 
-highlight completedInTime ctermfg=red ctermbg=lightgray
+highlight ShellTestResultsTime ctermfg=white
+highlight ShellTestSpecName cterm=NONE,bold
+highlight ShellTestFailure ctermfg=red
+highlight ShellTestSuccess ctermfg=green
+
+highlight ShellTextExpectation cterm=bold ctermbg=darkgrey ctermfg=white
+highlight ShellTextExpectationDivider ctermbg=darkgrey ctermfg=white
+
+highlight ShellTextSpecFileInfo ctermfg=white ctermbg=red
 
 " make the active status line colours alternate between two settings to give a visual notice of the CursorHold/CursorHoldI events 
 if ! exists("s:statuslineflag") 

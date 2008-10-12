@@ -1,15 +1,17 @@
-require 'autotest/growl'
+require 'autotest/timestamp'
 
-Autotest.add_hook :initialize do |autotest|
-  autotest.add_exception(/\.git/)
-  autotest.add_exception(/\.hg/)
-  autotest.add_exception(/\.svn/)
-  autotest.add_exception(/^\.\/config/)
-  autotest.add_exception(/^\.\/coverage/)
-  autotest.add_exception(/^\.\/db/)
-  autotest.add_exception(/^\.\/log/)
-  autotest.add_exception(/^\.\/public/)
-  autotest.add_exception(/^\.\/tmp/)
-  autotest.add_exception(/^\.\/vendor/)
-  autotest.unit_diff = 'cat' # Disable unit_diff, just pipe the stuff through cat
+Autotest.add_hook :initialize do |at|
+  
+  %w{.git .svn vendor/gems app/views features lib/tasks readme rakefile capfile}.each do |excludeable|
+    at.add_exception Regexp.new(Regexp.escape(excludeable),Regexp::IGNORECASE)
+  end
+
+  at.add_exception(/spec\/spec_(?:.*)_helper\.rb/i)
+
+  # app/presenters/accounts/file.rb => spec/presenters/accounts/file_spec.rb
+  at.add_mapping(/^app\/(.*)\.rb$/) do |matched_filename, last_regex_match|
+    at.files_matching %r%^spec/#{Regexp.escape(last_regex_match[1])}_spec\.rb$%
+  end
+
 end
+

@@ -31,5 +31,6 @@
   ch = cherry -v origin
 [github]
 	user = spicycode
+  token = df88284f4b4b3cd54499e651f47755db
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
