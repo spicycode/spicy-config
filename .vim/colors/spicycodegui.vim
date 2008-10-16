@@ -49,6 +49,9 @@
   highlight TabLineSel gui=NONE guibg=#343434 guifg=white 
   highlight TabLineFill gui=NONE guibg=#1A1A1A
 
+	highlight Folded guibg=#2A2A2A guifg=#808080 
+  highlight FoldColumn guibg=#2A2A2A guifg=#808080 
+
   highlight ShellTestResultsTime guifg=white
   highlight ShellTestSpecName gui=NONE,bold
   highlight ShellTestFailure guifg=red

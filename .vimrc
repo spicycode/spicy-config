@@ -113,7 +113,7 @@
   :nmap ,sh :Shell 
 
 " find file in project
-  :nmap ,t :find 
+  :nmap ,t :FuzzyFinderFile<cr> 
 
 " Run file with 
   :nmap ,sf :Shell script/spec -cfp %<cr>
