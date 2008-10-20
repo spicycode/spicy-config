@@ -178,6 +178,6 @@
   
   " Textmate Fuzzy Finder ignores
   let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
-  let g:fuzzy_matching_limit = 100
+  let g:fuzzy_matching_limit = 20
 
   runtime user_settings.vim
