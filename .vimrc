@@ -113,7 +113,7 @@
   :nmap ,sh :Shell 
 
 " find file in project
-  :nmap ,t :FuzzyFinderFile<cr> 
+  :nmap ,t :FuzzyFinderTextMate<cr> 
 
 " Run file with 
   :nmap ,sf :Shell script/spec -cfp %<cr>
@@ -140,7 +140,7 @@
 
 " Title String: what will actually be displayed
   set titlestring=VIM:\ %-25.55F\ %a%r%m titlelen=70
- 
+
 " Turn off rails bits of statusbar
   let g:rails_statusline=0
  
@@ -175,3 +175,7 @@
    set term=xterm
    colors spicycode
   endif
+  
+  " Textmate Fuzzy Finder ignores
+  let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
+  let g:fuzzy_matching_limit = 100
