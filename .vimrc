@@ -116,7 +116,7 @@
   :nmap ,t :FuzzyFinderTextMate<cr> 
 
 " Run file with 
-  :nmap ,sf :Shell script/spec -cfp %<cr>
+  :nmap ,sf :Shell script/spec -cfn %<cr>
   :nmap ,st :Shell ruby %<cr>
   
   :nmap ,foo  :source ~/.vimrc<cr>:set syntax=shell<cr>
