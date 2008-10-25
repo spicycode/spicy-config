@@ -48,7 +48,7 @@
 " * Search & Replace
 " show the `best match so far' as search strings are typed:
   set incsearch
- 
+
 " assume the /g flag on :s substitutions to replace all matches in a line:
   set gdefault
 
@@ -83,19 +83,24 @@
   :nmap ,te :tabedit  
 
 " SHELL
-  command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
+  
+  function! s:RubyRunCommand(cmdline)
+    botright new Shell
+    setlocal buftype=nofile 
+    setlocal bufhidden=delete 
+    setlocal nobuflisted 
+    setlocal noswapfile 
+    setlocal nowrap
+    setlocal filetype=shell
+    setlocal syntax=shell
 
-  function! s:RunShellCommand(cmdline)
-    botright new
-    setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile nowrap
     call setline(1,a:cmdline)
     call setline(2,substitute(a:cmdline,'.','=','g'))
-    execute 'setfiletype shell'
-    execute 'set syntax=shell'
-    execute 'silent $read !'.escape(a:cmdline,'%#')
-    setlocal nomodifiable
-    1
+    execute 'silent $read !'.escape(a:cmdline, '%#')
+"    ruby "v=VIM::Buffer.current;line_num=v.count;IO.popen(v[1]) { |output| until output.eof?; v.append(line_num, output.gets.chomp); line_num += 1; end; }"
   endfunction
+
+  command! -nargs=+ Shell call s:RubyRunCommand(<q-args>) 
 
   :nmap ,sh :Shell 
 
@@ -103,10 +108,9 @@
   :nmap ,t :FuzzyFinderTextMate<cr> 
 
 " Run file with 
-  :nmap ,sf :Shell script/spec -cfn %<cr>
+  :nmap ,sf :Shell script/spec -fn %<cr>
   :nmap ,st :Shell ruby %<cr>
   
-  :nmap ,foo  :source ~/.vimrc<cr>:set syntax=shell<cr>
 " Quick, jump out of insert mode while no one is looking
   :imap ii <Esc>
 
@@ -132,13 +136,15 @@
   let g:rails_statusline=0
  
 " TagList {{{
-  set tags=./tags;
   let Tlist_GainFocus_On_ToggleOpen = 1
+  let Tlist_Process_File_Always = 1
   let Tlist_Inc_Winwidth = 0
-  let Tlist_Enable_Fold_Column = 0
-  let Tlist_Use_SingleClick = 1
+  let Tlist_Enable_Fold_Column = 0 "Disable drawing the fold column
+  let Tlist_Use_SingleClick = 1 "Single click tag selection
   let Tlist_Use_Right_Window = 1
-  :nmap ,ta :TlistAddFilesRecursive app<cr>
+  let Tlist_Exit_OnlyWindow = 1 "Exit if only the taglist is open
+  let Tlist_File_Fold_Auto_Close = 1 " Only auto expand the current file
+  :nmap ,ta ::TlistAddFilesRecursive app<cr>TlistAddFilesRecursive lib<cr>
   :nmap <F3> :TlistToggle<cr>
 
 " NERDTree {{{
@@ -146,22 +152,13 @@
   let NERDTreeHighlightCursorline = 1
   let NERDTreeShowBookmarks = 1
   let NERDTreeShowHidden = 1
-  let NERDTreeQuitOnOpen = 1
+"  let NERDTreeQuitOnOpen = 1
 
   :nmap <F2> :NERDTreeToggle<cr>
 
-  autocmd FileType irb inoremap <buffer> <silent> <Cr> <Esc>:<C-u>ruby v=VIM::Buffer.current;v.append(v.line_number, eval(v[v.line_number]).inspect)<Cr>jo
-  nnoremap ,irb :<C-u>below new<Cr>:setfiletype irb<Cr>:set syntax=ruby<Cr>i
+  autocmd FileType irb inoremap <buffer> <silent> <Cr> <Esc>:<C-u>ruby v=VIM::Buffer.current;v.append(v.line_number, eval(v[v.line_number]).inspect)<Cr>
+  nnoremap ,irb :<C-u>below new<Cr>:setfiletype irb<Cr>:set syntax=ruby<Cr>:set buftype=nofile<Cr>:set bufhidden=delete<Cr>i
 
-   "setlocal nomodifiable
-   "setlocal nobuflisted
-   "setlocal nonumber
-   "setlocal noswapfile
-   "setlocal buftype=nofile
-   "setlocal bufhidden=delete
-   "setlocal noshowcmd
-   "setlocal wrap
-   "noremap <buffer> <silent> q :close<cr>
   if has("gui_running")
     colors spicycodegui
     set guioptions=e
@@ -173,13 +170,7 @@
   endif
   
   " Textmate Fuzzy Finder ignores
-  let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
+  let g:fuzzy_ignore = "*.png;*.PNG;*.JPG;*.jpg;*.GIF;*.gif;vendor/**;coverage/**;tmp/**"
   let g:fuzzy_matching_limit = 20
-
-  "ruby
-  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
   runtime user_settings.vim
