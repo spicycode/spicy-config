@@ -83,9 +83,12 @@
   :nmap ,te :tabedit  
 
 " SHELL
-  
-  function! s:RubyRunCommand(cmdline)
-    botright new Shell
+
+  command! -complete=file -nargs=+ Shell call s:RunShellCommand(<q-args>)
+
+  function! s:RunShellCommand(cmdline)
+    botright new
+
     setlocal buftype=nofile 
     setlocal bufhidden=delete 
     setlocal nobuflisted 
@@ -96,11 +99,11 @@
 
     call setline(1,a:cmdline)
     call setline(2,substitute(a:cmdline,'.','=','g'))
-    execute 'silent $read !'.escape(a:cmdline, '%#')
-"    ruby "v=VIM::Buffer.current;line_num=v.count;IO.popen(v[1]) { |output| until output.eof?; v.append(line_num, output.gets.chomp); line_num += 1; end; }"
+    execute 'silent $read !'.escape(a:cmdline,'%#')
+    setlocal nomodifiable
+    1
   endfunction
 
-  command! -nargs=+ Shell call s:RubyRunCommand(<q-args>) 
 
   :nmap ,sh :Shell 
 
