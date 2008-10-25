@@ -13,7 +13,7 @@
 if &cp || exists("g:autoloaded_rails")
   finish
 endif
-let g:autoloaded_rails = '2.0'
+let g:autoloaded_rails = '2.1'
 
 let s:cpo_save = &cpo
 set cpo&vim
@@ -223,8 +223,8 @@ function! s:lastmethodline(...)
   return s:lastopeningline(&l:define,0,a:0 ? a:1 : line("."))
 endfunction
 
-function! s:lastmethod()
-  let line = s:lastmethodline()
+function! s:lastmethod(...)
+  let line = s:lastmethodline(a:0 ? a:1 : line("."))
   if line
     return s:sub(matchstr(getline(line),'\%('.&define.'\)\zs\h\%(\k\|[:.]\)*[?!=]\='),':$','')
   else
@@ -333,6 +333,8 @@ function! s:model(...)
     return s:sub(f,'.*<spec/models/(.*)_spec\.rb$','\1')
   elseif f =~ '\<\%(test\|spec\)/fixtures/.*\.\w*\~\=$'
     return s:singularize(s:sub(f,'.*<%(test|spec)/fixtures/(.*)\.\w*\~=$','\1'))
+  elseif f =~ '\<\%(test\|spec\)/exemplars/.*_exemplar\.rb$'
+    return s:sub(f,'.*<%(test|spec)/exemplars/(.*)_exemplar\.rb$','\1')
   elseif a:0 && a:1
     return s:singularize(s:controller())
   endif
@@ -2577,7 +2579,7 @@ function! s:AlternateFile()
       return s:sub(file,'<spec/','')
     elseif t == 'lib'
       return s:sub(f, '<lib/(.*)\.rb$', 'test/unit/\1_test\.rb')."\n".s:sub(f, '<lib/(.*)\.rb$', 'spec/lib/\1_spec\.rb')
-    elseif t == 'spec'
+    elseif t =~ '^spec\>'
       return s:sub(file,'<spec/','app/')
     elseif file =~ '\<vendor/.*/lib/'
       return s:sub(file,'<vendor/.{-}/\zslib/','test/')
@@ -3996,17 +3998,18 @@ function! s:getopt(opt,...)
   else
     let scope = 'abgl'
   endif
+  let lnum = a:0 > 1 ? a:2 : line('.')
   if scope =~ 'l' && &filetype != 'ruby'
     let scope = s:sub(scope,'l','b')
   endif
   if scope =~ 'l'
-    call s:LocalModelines()
+    call s:LocalModelines(lnum)
   endif
   let opt = s:sub(opt,'<%(rake|rake_task|rake_target)$','task')
   " Get buffer option
   if scope =~ 'l' && exists("b:_".s:sname()."_".s:escvar(s:lastmethod())."_".opt)
-    return b:_{s:sname()}_{s:escvar(s:lastmethod())}_{opt}
-  elseif exists("b:".s:sname()."_".opt) && (scope =~ 'b' || (scope =~ 'l' && s:lastmethod() == ''))
+    return b:_{s:sname()}_{s:escvar(s:lastmethod(lnum))}_{opt}
+  elseif exists("b:".s:sname()."_".opt) && (scope =~ 'b' || (scope =~ 'l' && s:lastmethod(lnum) == ''))
     return b:{s:sname()}_{opt}
   elseif scope =~ 'a' && exists("s:_".s:rv()."_".s:environment()."_".opt)
     return s:_{s:rv()}_{s:environment()}_{opt}
@@ -4090,11 +4093,11 @@ function! s:BufModelines()
   endwhile
 endfunction
 
-function! s:LocalModelines()
+function! s:LocalModelines(lnum)
   if !g:rails_modelines
     return
   endif
-  let lbeg = s:lastmethodline()
+  let lbeg = s:lastmethodline(a:lnum)
   let lend = s:endof(lbeg)
   if lbeg == 0 || lend == 0
     return

@@ -63,19 +63,6 @@
 " Settings fo rnetrw
   let g:netrw_list_hide='^\.,\~$'
 
-" TAB COMPLETION FOR AUTO COMPLETE
-  if has("eval")
-      function! CleverTab()
-          if strpart(getline('.'), 0, col('.') - 1) =~ '^\s*$'
-              return "\<Tab>"
-          else
-              return "\<C-N>"
-          endif
-      endfun
-      inoremap <Tab> <C-R>=CleverTab()<CR>
-      inoremap <S-Tab> <C-P>
-  endif
-
 " ENABLE THE TAB BAR
   set tabline=%!MyTabLine()
   set showtabline=2 " 2=always
@@ -166,6 +153,15 @@
   autocmd FileType irb inoremap <buffer> <silent> <Cr> <Esc>:<C-u>ruby v=VIM::Buffer.current;v.append(v.line_number, eval(v[v.line_number]).inspect)<Cr>jo
   nnoremap ,irb :<C-u>below new<Cr>:setfiletype irb<Cr>:set syntax=ruby<Cr>i
 
+   "setlocal nomodifiable
+   "setlocal nobuflisted
+   "setlocal nonumber
+   "setlocal noswapfile
+   "setlocal buftype=nofile
+   "setlocal bufhidden=delete
+   "setlocal noshowcmd
+   "setlocal wrap
+   "noremap <buffer> <silent> q :close<cr>
   if has("gui_running")
     colors spicycodegui
     set guioptions=e
@@ -179,5 +175,11 @@
   " Textmate Fuzzy Finder ignores
   let g:fuzzy_ignore = "*.png;*.jpg;*.gif;vendor/**;coverage/**;tmp/**"
   let g:fuzzy_matching_limit = 20
+
+  "ruby
+  autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+  autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+  autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
   runtime user_settings.vim
