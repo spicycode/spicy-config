@@ -147,7 +147,7 @@
   let Tlist_Use_Right_Window = 1
   let Tlist_Exit_OnlyWindow = 1 "Exit if only the taglist is open
   let Tlist_File_Fold_Auto_Close = 1 " Only auto expand the current file
-  :nmap ,ta ::TlistAddFilesRecursive app<cr>TlistAddFilesRecursive lib<cr>
+  :nmap ,ta ::TlistAddFilesRecursive app<cr>TlistAddFilesRecursive lib<cr>TlistAddFilesRecursive public/stylesheets<cr>
   :nmap <F3> :TlistToggle<cr>
 
 " NERDTree {{{
