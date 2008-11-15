@@ -7,3 +7,9 @@ function update_textmate_bundles {
   done
 }
 
+function update_macports {
+  sudo port selfupdate
+  sudo port sync
+  sudo port outdated
+}
+
