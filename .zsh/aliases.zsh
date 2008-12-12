@@ -16,13 +16,11 @@ alias mysql='/opt/local/bin/mysql5 -u root --socket=/tmp/mysql.sock'
 alias mysqladmin='/opt/local/bin/mysqladmin5 -u root --socket=/tmp/mysql.sock'
 alias mysql_config='/opt/local/bin/mysql_config5'
 alias gvim='mvim -p'
-alias r='/usr/bin/r'
-alias autou='autotest'
-alias autof='AUTOTEST=functional autotest'
 alias cycle_passenger='touch tmp/restart.txt'
 alias e='open -a Emacs'
 alias screen='/opt/local/bin/screen'
 alias gemdir='/Library/Ruby/Gems/1.8/gems/'
+alias jruby='~/open_source/jruby_install/bin/jruby'
 
 function mysqlredo {
   mysqladmin drop $1
