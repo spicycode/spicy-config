@@ -18,7 +18,6 @@ alias mysql_config='/opt/local/bin/mysql_config5'
 alias gvim='mvim -p'
 alias cycle_passenger='touch tmp/restart.txt'
 alias e='open -a Emacs'
-alias screen='/opt/local/bin/screen'
 alias gemdir='/Library/Ruby/Gems/1.8/gems/'
 alias jruby='~/open_source/jruby_install/bin/jruby'
 

@@ -13,3 +13,15 @@ function update_macports {
   sudo port outdated
 }
 
+function new_tab {
+  osascript -e "
+  tell application \"iTerm\"
+   tell the first terminal
+    launch session \"Default Session\"
+    tell the last session
+     write text \"cd $(pwd)\"
+     write text \"clear\"
+    end tell
+   end tell
+  end tell"
+}
