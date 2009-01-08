@@ -13,6 +13,11 @@ function update_macports {
   sudo port outdated
 }
 
+function mysqlredo {
+  mysqladmin drop $1
+  mysqladmin create $1
+}
+
 function new_tab {
   osascript -e "
   tell application \"iTerm\"

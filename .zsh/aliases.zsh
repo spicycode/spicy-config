@@ -17,11 +17,6 @@ alias mysqladmin='/opt/local/bin/mysqladmin5 -u root --socket=/tmp/mysql.sock'
 alias mysql_config='/opt/local/bin/mysql_config5'
 alias gvim='mvim -p'
 alias cycle_passenger='touch tmp/restart.txt'
-alias e='open -a Emacs'
 alias gemdir='/Library/Ruby/Gems/1.8/gems/'
 alias jruby='~/open_source/jruby_install/bin/jruby'
-
-function mysqlredo {
-  mysqladmin drop $1
-  mysqladmin create $1
-}
+alias espresso='/Applications/Espresso.app/Contents/MacOS/Espresso'

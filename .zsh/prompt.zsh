@@ -39,12 +39,16 @@ set_running_app() {
 }
 
 precmd() { 
-	set_term_title
-	set_term_tab
+  if [ $TERM_PROGRAM ]; then
+    set_term_title
+    set_term_tab
+  fi
 }
 
 preexec() { 
-  set_running_app
+  if [ $TERM_PROGRAM ]; then
+    set_running_app
+  fi
 }
 
 postexec() {
