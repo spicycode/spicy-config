@@ -33,3 +33,5 @@
 	user = spicycode
 [diff "ruby"]
 	funcname = ^ *\\(\\(class\\|module\\|def\\) .*\\)
+[core]
+  pager = most +s +'/---'
