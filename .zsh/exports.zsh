@@ -3,7 +3,7 @@ export CABAL_BIN="$HOME/.cabal/bin"
 export PATH=/Library/Ruby/bin:~/.gem/ruby/1.8/bin:/usr/local/git/bin:/opt/local/bin:/opt/local/lib/postgresql82/bin/:/opt/local/sbin:/usr/local/bin:$CABAL_BIN:$PATH
 export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Home'
 export JRUBY_HOME='~/open_source/jruby_install'
-export CDPATH=~/spicycode:~/open_source:~/relevance
+export CDPATH=~/spicycode:~/open_source:~/relevance:.
 export RUBYOPT='rubygems'
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='3;33'
