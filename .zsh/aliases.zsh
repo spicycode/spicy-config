@@ -2,8 +2,6 @@
 alias ocaml="rlwrap ocaml"
 alias ssh='/usr/bin/ssh'
 alias ls='ls -G'
-alias tar='nocorrect /usr/bin/tar'
-alias sudo='nocorrect sudo'
 alias rmate='mate Rakefile README app config doc db lib public script spec test stories features examples'
 alias ri='ri -Tf ansi'
 alias ss='./script/server'

@@ -18,7 +18,7 @@ begin
   Kernel::at_exit do
     lines = Readline::HISTORY.to_a.reverse.uniq.reverse
     lines.reject! { |line| line == 'exit' }
-    lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.nitems > MAXHISTSIZE
+    lines = lines[-MAXHISTSIZE, MAXHISTSIZE] if lines.compact.size > MAXHISTSIZE
     File::open(histfile, File::WRONLY|File::CREAT|File::TRUNC) { |io| io.puts lines.join("\n") }
   end
 end

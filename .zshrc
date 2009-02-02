@@ -10,5 +10,3 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/magic_prediction.zsh
-# Make TextMate and others that need Bash happy
-ECHO PATH=$PATH > ~/.profile
