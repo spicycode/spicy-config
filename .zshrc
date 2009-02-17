@@ -10,3 +10,5 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/magic_prediction.zsh
+
+use_ruby_186
