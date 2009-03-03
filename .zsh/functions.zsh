@@ -34,17 +34,23 @@ function new_tab {
 function use_ruby_186 {
   export PATH=~/.gem/ruby/1.8/bin:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.8
+  set_which_ruby
   display_which_ruby
 }
 
 function use_ruby_191 {
   export PATH=~/.gem/ruby/1.9.1/bin:~/.ruby_versions/ruby_191/bin:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.9.1
+  set_which_ruby
   display_which_ruby
 }
 
 function display_which_ruby {
-  export RPS1="$(ruby -v | colrm 11)"
+  export RPS1=$WHICH_RUBY
+}
+
+function set_which_ruby {
+  export WHICH_RUBY="$(ruby -v | colrm 11)"
 }
 
 function hide_which_ruby {
