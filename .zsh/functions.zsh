@@ -34,6 +34,7 @@ function new_tab {
 function use_ruby_186 {
   export PATH=~/.gem/ruby/1.8/bin:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.8
+  export GEM_PATH=~/.gem/ruby/1.8
   set_which_ruby
   display_which_ruby
 }
@@ -41,6 +42,7 @@ function use_ruby_186 {
 function use_ruby_191 {
   export PATH=~/.gem/ruby/1.9.1/bin:~/.ruby_versions/ruby_191/bin:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.9.1
+  export GEM_PATH=~/.gem/ruby/1.9.1
   set_which_ruby
   display_which_ruby
 }
