@@ -11,4 +11,4 @@ export EDITOR="mvim -f"
 export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1
-#export PAGER="most"
+export PAGER="most"

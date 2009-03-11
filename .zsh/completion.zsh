@@ -1,5 +1,7 @@
 # COMPLETION
 zmodload -i zsh/complist
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
 zstyle ':completion:*' use-perl on
 zstyle ':completion:*' menu select
 
