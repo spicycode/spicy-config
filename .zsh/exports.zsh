@@ -7,7 +7,7 @@ export CDPATH=~/spicycode:~/open_source:~/relevance:.
 export RUBYOPT='rubygems'
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='3;33'
-export EDITOR="mvim -f"
+export EDITOR="vim"
 export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1

@@ -8,5 +8,5 @@ bindkey "^A" beginning-of-line                    # ctrl-a
 bindkey "^E" end-of-line                          # ctrl-e
 bindkey "[B": history-search-forward              # down arrow
 bindkey "[A": history-search-backward             # up arrow
-bindkey '^[[D' backward-word                      # option left
-bindkey '^[[C' forward-word                       # option right
+# bindkey '^[[D' backward-word                      # option left
+# bindkey '^[[C' forward-word                       # option right
