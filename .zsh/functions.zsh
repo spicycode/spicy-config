@@ -8,9 +8,7 @@ function update_textmate_bundles {
 }
 
 function update_macports {
-  sudo port selfupdate
-  sudo port sync
-  sudo port outdated
+  sudo port selfupdate && port outdated
 }
 
 function mysqlredo {

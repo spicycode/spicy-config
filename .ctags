@@ -1,0 +1,5 @@
+--links=no
+--languages=-html
+
+--regex-javascript=/^[A-Za-z_.]*\.([A-Za-z_]+) +=/\1/a,attributes/e
+--regex-javascript=/^(var +)?([A-Za-z_]+) =/\2/g,globals/e
