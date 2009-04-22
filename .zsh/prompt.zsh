@@ -1,26 +1,7 @@
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\/git:\1/'
-}
-
 git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -f .git/MERGE_HEAD ]]; then
-    if [[ -n `git status 2> /dev/null | grep 'unmerged:'` ]]; then
-      gitstatus=" %{$fg[red]%}unmerged%{$reset_color%}"
-    else
-      gitstatus=" %{$fg[green]%}merged%{$reset_color%}"
-    fi
-  elif [[ -n `git status 2> /dev/null | grep 'Changes to be committed:'` ]]; then
-    gitstatus=" %{$fg[green]%}modified%{$reset_color%}"
-  elif [[ -n `git status 2> /dev/null | grep 'use "git add'` ]]; then
-    gitstatus=" %{$fg[red]%}modified%{$reset_color%}"
-  elif [[ -n `git checkout HEAD 2> /dev/null | grep ahead` ]]; then
-    gitstatus=" %{$fg[yellow]%}unpushed%{$reset_color%}"
-  else
-    gitstatus=''
-  fi
   if [[ -n $ref ]]; then
-    echo "%{$fg_bold[green]%}/${ref#refs/heads/}%{$reset_color%}$gitstatus"
+    echo "%{$fg_bold[green]%}/${ref#refs/heads/}%{$reset_color%}"
   fi
 }
 

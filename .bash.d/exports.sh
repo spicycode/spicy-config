@@ -6,4 +6,3 @@ export EDITOR='vim -p'
 export TERM=xterm-color
 export CLICOLOR=true
 export LSCOLORS=gxfxcxdxbxegedabagacad
-# export LSCOLORS=bxfxcxdxbxegedabagacad
