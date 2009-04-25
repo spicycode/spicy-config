@@ -12,3 +12,4 @@ export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1
 export PAGER="most"
+export ARCHFLAGS='-arch i386'

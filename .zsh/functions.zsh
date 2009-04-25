@@ -29,8 +29,16 @@ function new_tab {
   end tell"
 }
 
-function use_ruby_186 {
+function use_leopard_ruby_186 {
   export PATH=~/.gem/bin:~/.gem/ruby/1.8/bin:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/:$ORIGINAL_PATH
+  export GEM_HOME=~/.gem/ruby/1.8
+  export GEM_PATH=~/.gem/ruby/1.8
+  set_which_ruby
+  display_which_ruby
+}
+
+function use_ruby_186 {
+  export PATH=~/.gem/bin:~/.gem/ruby/1.8/bin:/opt/ruby-enterprise-1.8.6-20090421/bin:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.8
   export GEM_PATH=~/.gem/ruby/1.8
   set_which_ruby
@@ -50,5 +58,5 @@ function display_which_ruby {
 }
 
 function set_which_ruby {
-  export WHICH_RUBY="$(ruby -v | colrm 11)"
+  export WHICH_RUBY="$(ruby -v | head | colrm 11)"
 }
