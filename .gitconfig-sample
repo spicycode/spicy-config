@@ -29,6 +29,8 @@
 	co = checkout
 	st = status
   ch = cherry -v origin
+[push]
+  default = tracking
 [github]
 	user = spicycode
 [diff "ruby"]
