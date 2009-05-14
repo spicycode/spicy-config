@@ -29,34 +29,23 @@ function new_tab {
   end tell"
 }
 
-function use_leopard_ruby_186 {
-  export PATH=~/.gem/bin:~/.gem/ruby/1.8/bin:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/:$ORIGINAL_PATH
+function use_ruby_186 {
+  export PATH=~/.gem/ruby/1.8/bin:/System/Library/Frameworks/Ruby.framework/Versions/Current/usr/bin/:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.8
   export GEM_PATH=~/.gem/ruby/1.8
-  set_which_ruby
-  display_which_ruby
+  echo "Using Leopard Ruby 1.8.6"
 }
 
-function use_ruby_186 {
-  export PATH=~/.gem/bin:~/.gem/ruby/1.8/bin:/opt/ruby-enterprise-1.8.6-20090421/bin:$ORIGINAL_PATH
+function use_ruby_ee_186 {
+  export PATH=~/.gem/ruby/1.8/bin:/opt/ruby-enterprise-1.8.6-20090421/bin:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.8
   export GEM_PATH=~/.gem/ruby/1.8
-  set_which_ruby
-  display_which_ruby
+  echo "Using Ruby EE 1.8.6"
 }
 
 function use_ruby_191 {
-  export PATH=~/.gem/ruby/1.9.1/bin:~/.ruby_versions/ruby_191/bin:$ORIGINAL_PATH
+  export PATH=~/.gem/ruby/1.9.1/bin:~/.ruby_versions/ruby_191_p0/bin:$ORIGINAL_PATH
   export GEM_HOME=~/.gem/ruby/1.9.1
   export GEM_PATH=~/.gem/ruby/1.9.1
-  set_which_ruby
-  display_which_ruby
-}
-
-function display_which_ruby {
-  echo $WHICH_RUBY
-}
-
-function set_which_ruby {
-  export WHICH_RUBY="$(ruby -v | head | colrm 11)"
+  echo "Using Ruby 1.9.1"
 }
