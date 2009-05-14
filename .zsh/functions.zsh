@@ -1,3 +1,19 @@
+function zsh_recompile() {
+  autoload -U zrecompile
+  [[ -f ~/.zshrc ]] && zrecompile -p ~/.zshrc
+  [[ -f ~/.zshrc.zwc.old ]] && rm -f ~/.zshrc.zwc.old
+
+  for f in ~/.zsh/**/*.zsh; do
+    [[ -f $f ]] && zrecompile -p $f
+    [[ -f $f.zwc.old ]] && rm -f $f.zwc.old
+  done
+
+  [[ -f ~/.zcompdump ]] && zrecompile -p ~/.zcompdump
+  [[ -f ~/.zcompdump.zwc.old ]] && rm -f ~/.zcompdump.zwc.old
+
+  source ~/.zshrc
+}
+
 function update_textmate_bundles {
   for dir in ~/Library/Application\ Support/TextMate/Bundles/*.tmbundle; do
     cd $dir
@@ -5,10 +21,6 @@ function update_textmate_bundles {
     svn up
     cd -
   done
-}
-
-function update_macports {
-  sudo port selfupdate && port outdated
 }
 
 function mysqlredo {
