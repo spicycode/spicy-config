@@ -9,20 +9,20 @@ zstyle ':vcs_info:*' formats        "/${GR}%s:${Y}${GR}%b%}${NC}"
 zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat "%b${RED}:${YE}%r"
 
 # Put the string "hostname::/full/directory/path" in the title bar:
-set_term_title() { 
+function set_term_title { 
 	echo -ne "\e]2;$PWD\a" 
 }
 
 # Put the parentdir/currentdir in the tab
-set_term_tab() {
+function set_term_tab {
 	echo -ne "\e]1;$PWD:h:t/$PWD:t\a" 
 }
 
-set_running_app() {
+function set_running_app {
  printf "\e]1; $PWD:t:$(history $HISTCMD | cut -b7- ) \a"
 }
 
-precmd() { 
+function precmd { 
   if [ $TERM_PROGRAM ]; then
     set_term_title
     set_term_tab
@@ -30,13 +30,13 @@ precmd() {
   fi
 }
 
-preexec() { 
+function preexec { 
   if [ $TERM_PROGRAM ]; then
     set_running_app
   fi
 }
 
-postexec() {
+function postexec {
   set_running_app
 }
 
