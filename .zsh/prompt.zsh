@@ -36,8 +36,4 @@ function postexec {
   set_running_app
 }
 
-if [[ -z $VIM ]]; then
-  export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color%}%{$vcs_info_msg_0_%}>%{$reset_color%} '
-else
-  export PS1='%2~%{$vcs_info_msg_0_%}> '
-fi
+export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color%}%{$vcs_info_msg_0_%}>%{$reset_color%} '
