@@ -2,7 +2,6 @@
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 
-zstyle ':completion:*' use-perl on
 zstyle ':completion:*' menu select
 
 # insert all expansions for expand completer
@@ -59,6 +58,8 @@ zstyle ':completion:*:rm:*' ignore-line yes
 zstyle ':completion:*:manuals'       separate-sections true
 zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 
+# This makes rake autocomplete happy
+zstyle ':completion:*' matcher-list 'r:|[:]=*'
+
 # Cache
 zstyle ':completion:*' use-cache off
-
