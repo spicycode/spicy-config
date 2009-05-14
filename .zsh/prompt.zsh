@@ -23,21 +23,21 @@ function set_running_app {
 }
 
 function precmd { 
-  if [ $TERM_PROGRAM ]; then
-    set_term_title
-    set_term_tab
-    vcs_info
-  fi
+  set_term_title
+  set_term_tab
+  vcs_info
 }
 
 function preexec { 
-  if [ $TERM_PROGRAM ]; then
-    set_running_app
-  fi
+  set_running_app
 }
 
 function postexec {
   set_running_app
 }
 
-export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color%}%{$vcs_info_msg_0_%}>%{$reset_color%} '
+if [[ -z $VIM ]]; then
+  export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color%}%{$vcs_info_msg_0_%}>%{$reset_color%} '
+else
+  export PS1='%2~%{$vcs_info_msg_0_%}> '
+fi
