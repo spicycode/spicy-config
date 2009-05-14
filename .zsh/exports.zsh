@@ -1,3 +1,4 @@
+# Add macports man pages to the man path
 export MANPATH=/opt/local/share/man:$MANPATH
 export ORIGINAL_PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:$PATH
 export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home'
@@ -9,5 +10,7 @@ export EDITOR="mvim -f"
 export TERM=xterm-color
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export CLICOLOR=1
+# Most must be install via macports.  It enables color in manpages, and several other nice to haves
 export PAGER="most"
+# This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS='-arch i386'
