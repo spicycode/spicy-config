@@ -1,11 +1,8 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export ORIGINAL_PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:$PATH
-
-# Make the jruby home directory available as a constant for later use
-export JRUBY_HOME='~/Projects/opensource/jruby-1.2.0'
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:$PATH
 
 # Our list of directorys we can cd to from anywhere
-export CDPATH=.:~/Projects/spicycode:~/Projects/open_source:~/Projects/relevance
+export CDPATH=.:~/Projects:~/Projects/spicycode:~/Projects/open_source:~/Projects/relevance
 
 # Add macports man pages to the man path
 export MANPATH=/opt/local/share/man:$MANPATH
