@@ -9,6 +9,16 @@ function use_ruby_from_leopard {
 function use_jruby_120 {
  export MY_RUBY_HOME=~/.ruby_versions/jruby-1.2.0
  export GEM_HOME=~/.gem/jruby/1.8
+ # Set jruby home to make nailgun happy.
+ export JRUBY_HOME=/Users/chad/.ruby_versions/jruby-1.2.0
+ update_path
+}
+
+function use_jruby_edge {
+ export MY_RUBY_HOME=~/.ruby_versions/jruby-source
+ export GEM_HOME=~/.gem/jruby/1.8
+ # Set jruby home to make nailgun happy.
+ export JRUBY_HOME=/Users/chad/.ruby_versions/jruby-source
  update_path
 }
 

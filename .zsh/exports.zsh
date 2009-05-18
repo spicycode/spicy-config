@@ -8,7 +8,8 @@ export CDPATH=.:~/Projects:~/Projects/spicycode:~/Projects/open_source:~/Project
 export MANPATH=/opt/local/share/man:$MANPATH
 
 # Set default console Java to 1.6
-export JAVA_HOME='/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home'
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
+
 
 # Setup terminal, and turn on colors
 export TERM=xterm-color

@@ -62,4 +62,6 @@ zstyle ':completion:*:manuals.(^1*)' insert-sections   true
 zstyle ':completion:*' matcher-list 'r:|[:]=*'
 
 # Cache
-zstyle ':completion:*' use-cache off
+# zstyle ':completion:*' use-cache off
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
