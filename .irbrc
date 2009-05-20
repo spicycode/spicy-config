@@ -41,20 +41,4 @@ def time_it(times=1)
   ret
 end
 
-# Why's aorta method to edit an object in YAML, awesome!
-# Source: http://rubyforge.org/snippet/detail.php?type=snippet&id=22
-def aorta(obj)
-  tempfile = File.join('/tmp',"yobj_#{ Time.now.to_i }")
-  File.open( tempfile, 'w' ) { |f| f << obj.to_yaml }
-  system( "#{ ENV['EDITOR'] || 'vi' } #{ tempfile }" )
-  return obj unless File.exists?( tempfile )
-  content = YAML::load( File.open( tempfile ) )
-  File.delete( tempfile )
-  content
-end
-
-def aorta!(obj)
-  obj = aorta(obj)
-end
-
 load File.dirname(__FILE__) + '/.railsrc' if $0 == 'irb' && ENV['RAILS_ENV'] 
