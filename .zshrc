@@ -11,4 +11,4 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/ruby_switcher.zsh
 
-use_ruby_191
+use_ruby_ee

@@ -6,11 +6,25 @@ function use_ruby_from_leopard {
  update_path
 }
 
+function use_ruby_ee {
+ export MY_RUBY_HOME=~/.ruby_versions/ruby-ee-186-20090610
+ export GEM_HOME=~/.gem/ruby/1.8
+ update_path
+}
+
 function use_jruby_120 {
  export MY_RUBY_HOME=~/.ruby_versions/jruby-1.2.0
  export GEM_HOME=~/.gem/jruby/1.8
  # Set jruby home to make nailgun happy.
  export JRUBY_HOME=/Users/chad/.ruby_versions/jruby-1.2.0
+ update_path
+}
+
+function use_jruby_130 {
+ export MY_RUBY_HOME=~/.ruby_versions/jruby-1.3.0
+ export GEM_HOME=~/.gem/jruby/1.8
+ # Set jruby home to make nailgun happy.
+ export JRUBY_HOME=/Users/chad/.ruby_versions/jruby-1.3.0
  update_path
 }
 
