@@ -6,7 +6,7 @@ IRB.conf[:AUTO_INDENT] = true
 IRB.conf[:VERBOSE] = true
 IRB.conf[:USE_READLINE] = true
 
-HISTFILE = "~/.irb_history_#{RUBY_VERSION}"
+HISTFILE = "~/.irb_history_#{RUBY_PLATFORM}_#{RUBY_VERSION}"
 MAXHISTSIZE = 500
 
 begin

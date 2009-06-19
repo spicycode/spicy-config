@@ -27,3 +27,11 @@ function mysqlredo {
   mysqladmin drop $1
   mysqladmin create $1
 }
+
+function nginx_start {
+   sudo nginx
+}
+
+function nginx_stop {
+   sudo kill $(cat /opt/nginx/logs/nginx.pid)
+}

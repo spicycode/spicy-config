@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:/opt/nginx/sbin:$PATH
 
 # Our list of directorys we can cd to from anywhere
 export CDPATH=.:~/Projects:~/Projects/spicycode:~/Projects/open_source:~/Projects/relevance
@@ -9,7 +9,6 @@ export MANPATH=/opt/local/share/man:$MANPATH
 
 # Set default console Java to 1.6
 export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/1.6/Home
-
 
 # Setup terminal, and turn on colors
 export TERM=xterm-color
@@ -29,3 +28,8 @@ export ARCHFLAGS='-arch i386'
 
 # Set macvim with flag to wait for console (git commit compat) as our EDITOR
 export EDITOR="mvim -f"
+
+# Make activemq happy
+export ACTIVEMQ_HOME=~/Projects/relevance/activemq/
+export ACTIVEMQ_BASE=~/Projects/relevance/activemq/
+export ACTIVEMQ=~/Projects/relevance/activemq/bin/macosx/activemq
