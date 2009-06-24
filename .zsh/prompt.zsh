@@ -40,7 +40,7 @@ function git_prompt_info() {
       gitstatus=" %{$fg[green]%}merged%{$reset_color%}"
     fi
   elif [[ ${gitst} =~ "Changes to be committed" ]]; then
-    gitstatus=" %{$fg[yellow]%}☂%{$reset_color%}"
+    gitstatus=" %{$fg[blue]%}☂%{$reset_color%}"
   elif [[ ${gitst} =~ "use \"git add" ]]; then
     gitstatus=" %{$fg[red]%}☁%{$reset_color%}"
   elif [[ -n `git checkout HEAD 2> /dev/null | grep ahead` ]]; then
