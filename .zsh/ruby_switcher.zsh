@@ -5,7 +5,6 @@ function use_ruby_from_leopard {
  export GEM_HOME=~/.gem/ruby/1.8
  update_path
 }
-typeset +g use_ruby_from_leopard
 
 function use_ruby { use_ruby_from_leopard }
 
