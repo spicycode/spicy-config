@@ -1,13 +1,3 @@
-#autoload -Uz vcs_info && vcs_info
-RED=$'%{\e[31m%}'
-GR=$'%{\e[32m%}'
-MA=$'%{\e[35m%}'
-YE=$'%{\e[33m%}'
-NC=$'%{\e[0m%}'
-zstyle ':vcs_info:*' actionformats  "/${GR}%s:${YE}${GR}%b${YE}|${RED}%a${NC}"
-zstyle ':vcs_info:*' formats        "/${GR}%s:${Y}${GR}%b%}${NC}"
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat "%b${RED}:${YE}%r"
-
 # Put the string "hostname::/full/directory/path" in the title bar:
 function set_term_title { 
 	echo -ne "\e]2;$PWD\a" 
@@ -25,7 +15,6 @@ function set_running_app {
 function precmd { 
   set_term_title
   set_term_tab
-  #vcs_info
 }
 
 function preexec { 
@@ -53,9 +42,9 @@ function git_prompt_info() {
   elif [[ ${gitst} =~ "Changes to be committed" ]]; then
     gitstatus=" %{$fg[green]%}modified%{$reset_color%}"
   elif [[ ${gitst} =~ "use \"git add" ]]; then
-    gitstatus=" %{$fg[red]%}modified%{$reset_color%}"
+    gitstatus=" %{$fg[red]%}✗%{$reset_color%}"
   elif [[ -n `git checkout HEAD 2> /dev/null | grep ahead` ]]; then
-    gitstatus=" %{$fg[yellow]%}unpushed ↑ %{$reset_color%}"
+    gitstatus=" %{$fg[red]%}↑%{$reset_color%}"
   else
     gitstatus=''
   fi
