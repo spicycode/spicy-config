@@ -54,4 +54,3 @@ function git_prompt_info() {
 }
 
 export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color$bold_color$fg[green]%}$(git_prompt_info)>%{$reset_color%} '
-#export PS1='%{$reset_color$fg[gray]%}%2~%{$reset_color%}%{$vcs_info_msg_0_%}>%{$reset_color%} '
