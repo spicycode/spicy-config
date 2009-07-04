@@ -29,9 +29,6 @@ setopt HIST_REDUCE_BLANKS
 # Include more information about when the command was executed, etc
 setopt EXTENDED_HISTORY
 
-# Enables real-time sharing of history across terminal sessions
-setopt SHARE_HISTORY
-
 # ===== Completion 
 
 # Allow completion from within a word/phrase
