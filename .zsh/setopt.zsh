@@ -3,9 +3,6 @@
 # If you type foo, and it isn't a command, and it is a directory in your cdpath, go there
 setopt AUTO_CD
 
-# Help us out with basic spelling correction for commands
-setopt CORRECT
-
 # Allow comments even in interactive shells (especially for Muness)
 setopt INTERACTIVE_COMMENTS
 

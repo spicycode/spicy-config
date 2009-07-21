@@ -27,7 +27,8 @@ export LESS=ce3M
 export ARCHFLAGS='-arch i386'
 
 # Set macvim with flag to wait for console (git commit compat) as our EDITOR
-export EDITOR="mvim -f"
+# and then refocus on iTerm
+export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
 
 # Make activemq happy
 export ACTIVEMQ_HOME=~/Projects/relevance/activemq/

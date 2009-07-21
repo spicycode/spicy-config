@@ -1,8 +1,3 @@
-# Aliases that do not change the command
-alias g='git'
-
-# My aliases
-alias port='sudo port -v'
 alias update_macports='sudo port selfupdate && port outdated'
 alias ocaml='rlwrap ocaml'
 
@@ -17,7 +12,6 @@ alias ll='ls -GFhl'
 
 alias rmate='mate Rakefile README app bin config doc db lib public script spec test stories features examples'
 alias ri='ri -Tf ansi'
-alias rdoc='rdoc --ri --line-numbers --all'
 alias ss='./script/server'
 alias sc='./script/console'
 alias vi='mvim -p'
@@ -29,5 +23,5 @@ alias mysql='/opt/local/bin/mysql5 -u root'
 alias mysqladmin='/opt/local/bin/mysqladmin5 -u root'
 alias mysql_config='/opt/local/bin/mysql_config5'
 alias gvim='mvim -p'
-alias e='aquamacs'
+alias e='open -a Aquamacs'
 alias cycle_passenger='touch tmp/restart.txt'
