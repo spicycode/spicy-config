@@ -24,6 +24,12 @@ function use_ruby_191 {
  update_path
 }
 
+function use_ruby_192 {
+ export MY_RUBY_HOME=~/.ruby_versions/ruby_192p1
+ export GEM_HOME=~/.gem/ruby/1.9.2
+ update_path
+}
+
 function update_path {
  export PATH=$GEM_HOME/bin:$MY_RUBY_HOME/bin:$ORIGINAL_PATH
  echo "Using `ruby -v`"

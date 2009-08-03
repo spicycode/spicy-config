@@ -1,5 +1,6 @@
 function zsh_recompile() {
   autoload -U zrecompile
+
   [[ -f ~/.zshrc ]] && zrecompile -p ~/.zshrc
   [[ -f ~/.zshrc.zwc.old ]] && rm -f ~/.zshrc.zwc.old
 
