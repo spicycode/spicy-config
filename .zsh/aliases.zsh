@@ -10,10 +10,11 @@ alias ls='ls -GFh'
 # Same as above, but in long listing format
 alias ll='ls -GFhl'
 
-alias rmate='mate Rakefile README app bin config doc db lib public script spec test stories features examples'
+alias rmate='mate Capfile Rakefile README app bin config doc db lib public script spec test stories features examples'
 alias ri='ri -Tf ansi'
 alias ss='./script/server'
 alias sc='./script/console'
+alias sg='./script/generate'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias mysql='/opt/local/bin/mysql5 -u root'

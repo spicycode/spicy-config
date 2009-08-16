@@ -19,9 +19,7 @@ export CLICOLOR=1
 export GREP_OPTIONS='--color=auto' 
 export GREP_COLOR='3;33'
 
-# Enable color, and better prompt in LESS
-export PAGER=less
-export LESS=ce3M
+export PAGER=most
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
 export ARCHFLAGS='-arch i386'
@@ -34,3 +32,9 @@ export EDITOR='mvim -f -c "au VimLeave * !open -a iTerm"'
 export ACTIVEMQ_HOME=~/Projects/relevance/activemq/
 export ACTIVEMQ_BASE=~/Projects/relevance/activemq/
 export ACTIVEMQ=~/Projects/relevance/activemq/bin/macosx/activemq
+
+# -- start rip config -- #
+export RIPDIR=/Users/chad/.rip
+export RUBYLIB="$RUBYLIB:$RIPDIR/active/lib"
+export PATH="$PATH:$RIPDIR/active/bin"
+# -- end rip config -- #
