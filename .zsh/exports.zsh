@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/opt/local/lib/postgresql83/bin/:/opt/nginx/sbin:/opt/godi/bin:/opt/godi/sbin:~/.zsh/bin:~/.bin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/PostgreSQL8/bin:/opt/nginx/sbin:/opt/godi/bin:/opt/godi/sbin:~/.zsh/bin:~/.bin:$PATH
 
 # Our list of directorys we can cd to from anywhere
 export CDPATH=.:~/Projects:~/Projects/spicycode:~/Projects/open_source:~/Projects/relevance
@@ -22,7 +22,7 @@ export GREP_COLOR='3;33'
 export PAGER=most
 
 # This resolves issues install the mysql, postgres, and other gems with native non universal binary extensions
-export ARCHFLAGS='-arch i386'
+export ARCHFLAGS='-arch x86_64'
 
 # Set macvim with flag to wait for console (git commit compat) as our EDITOR
 # and then refocus on iTerm

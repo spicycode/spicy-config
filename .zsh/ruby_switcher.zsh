@@ -21,18 +21,13 @@ function use_jruby_130 {
 function use_jruby { use_jruby_130 }
 
 function use_ruby_191 {
- export MY_RUBY_HOME=~/.ruby_versions/ruby_191
+ export MY_RUBY_HOME=~/.ruby_versions/ruby191
  export GEM_HOME=~/.gem/ruby/1.9.1
  update_path
  echo 'Using ruby 1.9.1'
 }
 
-function use_ruby_192 {
- export MY_RUBY_HOME=~/.ruby_versions/ruby192p1
- export GEM_HOME=~/.gem/ruby/1.9.2
- update_path
- echo 'Using ruby 1.9.2'
-}
+function use_ruby19 { use_ruby_191 }
 
 function update_path {
  export PATH=$GEM_HOME/bin:$MY_RUBY_HOME/bin:$ORIGINAL_PATH

@@ -11,4 +11,5 @@ source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/ruby_switcher.zsh
 
-use_ruby_from_leopard
+# use_ruby_from_leopard
+use_ruby19
