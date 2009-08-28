@@ -1,23 +1,19 @@
-h1. Spicy Config
+# Spicy Config
 
-h3. Long ago, in a $HOME directory mounted several servers away
+## Long ago, in a $HOME directory mounted several servers away
 
 So this is my pile *o* config files.   In it you will find:
 
-* ZSH shell config (shell of choice)
+* ZSH shell config 
 ** On OSX it works best with the latest ZSH (4.3.9).  You can get it via the following instructions:
 *** sudo port sync
 *** sudo port install zsh-devel
 *** $EDITOR /etc/shells and add /opt/local/bin/zsh
 *** chsh -S /opt/local/bin/zsh
-* Bash shell config (mirrors my ZSH as much as possible)
-* Fish shell config
 * IRB config
-* VIM config
-* Emacs config
 * Screen config
 * Git config
 
-h3. Will the config ever stop?
+## Will the config ever stop?
 
 Yo, I don't know.

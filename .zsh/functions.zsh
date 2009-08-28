@@ -36,7 +36,7 @@ function nginx_start {
 function nginx_stop {
    sudo kill $(cat /opt/nginx/logs/nginx.pid)
 }
-
-function ruby { 
-  [[ "$1" == "" ]] && irb || `whence -p ruby` $@ 
-}
+ 
+# function ruby { 
+#   [[ "$1" == "" ]] && irb || `whence -p ruby` $@ 
+# }
