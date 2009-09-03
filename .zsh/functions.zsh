@@ -29,14 +29,9 @@ function mysqlredo {
   mysqladmin create $1
 }
 
-function nginx_start {
-   sudo nginx
-}
+function nginx_start { sudo nginx }
 
-function nginx_stop {
-   sudo kill $(cat /opt/nginx/logs/nginx.pid)
-}
+function nginx_stop { sudo kill $(cat /opt/nginx/logs/nginx.pid) }
  
-# function ruby { 
-#   [[ "$1" == "" ]] && irb || `whence -p ruby` $@ 
-# }
+# Change directory and open TextMate in a single command
+function tm { cd $1; rmate $1 }

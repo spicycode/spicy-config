@@ -9,10 +9,5 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
-# source ~/.zsh/ruby_switcher.zsh
-# use_ruby_from_leopard
-# use_ruby
-#
-# Trying out RVM
-if [ -f ~/.rvm/bin/rvm ] ; then source ~/.rvm/bin/rvm ; fi
-if [ -f ~/.rvm/current ] ; then source ~/.rvm/current ; fi
+source ~/.zsh/ruby_switcher.zsh
+use_ruby
