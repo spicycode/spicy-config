@@ -1,3 +1,5 @@
+autoload -U compinit && compinit                                                                                       
+
 # COMPLETION
 zmodload -i zsh/complist
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
