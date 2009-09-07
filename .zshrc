@@ -10,4 +10,4 @@ source ~/.zsh/bindkeys.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/history.zsh
 source ~/.zsh/ruby_switcher.zsh
-use_ruby
+use_ruby19

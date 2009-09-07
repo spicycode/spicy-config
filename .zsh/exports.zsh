@@ -1,5 +1,5 @@
 # Currently this path is appendend to dynamically when picking a ruby version
-export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/PostgreSQL8/bin:/opt/local/lib/mysql5/bin:/opt/nginx/sbin:/opt/godi/bin:/opt/godi/sbin:~/.zsh/bin:~/.bin:$PATH
+export PATH=/Users/chad/.homebrew/bin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/Library/PostgreSQL8/bin:/opt/local/lib/mysql5/bin:/opt/nginx/sbin:/opt/godi/bin:/opt/godi/sbin:~/.zsh/bin:~/.bin:$PATH
 
 # Our list of directorys we can cd to from anywhere
 export CDPATH=.:~/Projects:~/Projects/spicycode:~/Projects/open_source:~/Projects/relevance
