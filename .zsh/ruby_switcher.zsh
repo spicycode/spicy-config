@@ -5,7 +5,7 @@ function use_ruby_from_leopard {
  export GEM_HOME=~/.gem/ruby/1.8
  export GEM_PATH=~/.gem/ruby/1.8
  update_path
- echo 'Using ruby 1.8.6 from Leopard'
+ echo 'Using ruby 1.8.7 from OSX'
 }
 
 function use_jruby_130 {
