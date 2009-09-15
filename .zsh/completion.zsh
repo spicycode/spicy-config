@@ -17,9 +17,6 @@ zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %
 # Add simple colors to kill
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#) ([0-9a-z-]#)*=01;34=0=01'
 
-# Configure approximate completion matcher
-zstyle -e ':completion:*:approximate:*' max-errors 'reply=( $(( ($#PREFIX+$#SUFFIX)/2 )) numeric )'
-
 # list of completers to use
 zstyle ':completion:*::::' completer _expand _complete _ignored _approximate
 
