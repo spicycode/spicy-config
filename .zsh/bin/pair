@@ -8,6 +8,11 @@
 # Author: Bryan Helmkamp (http://brynary.com)
 # http://www.brynary.com/2008/9/1/setting-the-git-commit-author-to-pair-programmers-names
 
+unless File.exists?(".git")
+  puts "This doesn't look like a git repository."
+  exit 1
+end
+
 #######################################################################
 ## Configuration
 
@@ -30,11 +35,6 @@ AUTHORS = {
 
 ## End of configuration
 #######################################################################
-
-unless File.exists?(".git")
-  puts "This doesn't look like a git repository."
-  exit 1
-end
 
 authors = ARGV.map do |initials|
   if AUTHORS[initials.downcase]

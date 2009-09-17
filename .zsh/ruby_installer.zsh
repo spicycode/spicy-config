@@ -14,13 +14,24 @@ function install_jruby_120 {
 
 function install_ruby_191 {
   mkdir -p ~/.ruby_versions && cd /tmp
-  curl -L -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p129.tar.gz &&
-  tar xzf ruby-1.9.1-p129.tar.gz &&
-  cd ruby-1.9.1-p129 &&
+  curl -L -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.1-p243.tar.gz &&
+  tar xzf ruby-1.9.1-p243.tar.gz &&
+  cd ruby-1.9.1-p243 &&
   ./configure --prefix=$HOME/.ruby_versions/ruby_191 --enable-shared &&
   make && make install &&
-  rm -rf ruby-1.9.1-p129.tar.gz ruby-1.9.1-p129 &&
+  rm -rf ruby-1.9.1-p243.tar.gz ruby-1.9.1-p243 &&
   use_ruby_191 && install_basic_gems && cd ~
+}
+
+function install_ruby_192 {
+  mkdir -p ~/.ruby_versions && cd /tmp
+  curl -L -O ftp://ftp.ruby-lang.org/pub/ruby/1.9/ruby-1.9.2-preview1.tar.gz &&
+  tar xzf ruby-1.9.1-preview1.tar.gz &&
+  cd ruby-1.9.1-preview1 &&
+  ./configure --prefix=$HOME/.ruby_versions/ruby_192 --enable-shared &&
+  make && make install &&
+  rm -rf ruby-1.9.2-preview1.tar.gz ruby-1.9.2-preview1 &&
+  use_ruby_192 && install_basic_gems && cd ~
 }
 
 function install_basic_gems {
