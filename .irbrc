@@ -13,6 +13,8 @@ IRB.conf[:PROMPT][:spicycode] = {
   :RETURN=> "irb \=> %s\n"
 }
 
+IRB.conf[:PROMPT][:DEFAULT].replace(IRB.conf[:PROMPT][:spicycode])
+
 IRB.conf[:PROMPT_MODE] = :spicycode
 
 IRB_HISTORY_FILE = "~/.irb_history_#{RUBY_PLATFORM}_#{RUBY_VERSION}"
